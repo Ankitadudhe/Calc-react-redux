@@ -1,17 +1,17 @@
-var appVersion='v1.00';
+ var cacheData='v1.00';
 
-// files to cache
+ // files to cache
 var files=[
-    './index.html',
-    './index.css',
-    './App.js'
+   './index.html',
+      './index.css',
+  './App.js'
 ]
 //install
 self.addEventListener('install',event=>{
     event.waitUntil(
-        caches.open(appVersion)
-        .then(cache=>{
-            return cache.addAll(files)
+        caches.open("cacheData")
+        .then(caches=>{
+            return caches.addAll(files)
             .catch(err=>{
                 console.error('Error adding files to cache',err);
 
